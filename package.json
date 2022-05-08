@@ -4,7 +4,7 @@
   "description": "This is a solution to the frontendmentor challenge",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass:watch": "sass --watch scss/style.scss style.css"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/zqwirp/fem-advice-generator/issues"
   },
-  "homepage": "https://github.com/zqwirp/fem-advice-generator#readme"
+  "homepage": "https://github.com/zqwirp/fem-advice-generator#readme",
+  "devDependencies": {
+    "sass": "^1.51.0"
+  }
 }
