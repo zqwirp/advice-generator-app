@@ -5,10 +5,101 @@
   font-weight: 800;
   font-style: normal;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+body, html {
+  height: 100%;
+}
+
 body {
+  background-color: hsl(218deg, 23%, 16%);
   font-family: "manropeextrabold";
   font-weight: 800;
-  background-color: hsl(218deg, 23%, 16%);
+  color: hsl(193deg, 38%, 86%);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10vh;
+  height: 100%;
+}
+
+.box {
+  position: relative;
+  width: 90%;
+  min-width: 300px;
+  max-width: 400px;
+  padding: 33px 20px 60px;
+  background-color: hsl(217deg, 19%, 24%);
+  border-radius: 8px;
+  font-size: 22px;
+  text-align: center;
+}
+.box__title {
+  font-size: 0.5em;
+  letter-spacing: 0.3em;
+  color: hsl(150deg, 100%, 66%);
+}
+.box__body {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.box__dvider img {
+  margin: 0 auto;
+}
+.box__dvider img.desktop {
+  display: none;
+}
+.box button {
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228deg, 45%, 44%);
+}
+
+@media screen and (min-width: 400px) {
+  .box__dvider img.mobile {
+    display: none;
+  }
+  .box__dvider img.desktop {
+    display: block;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

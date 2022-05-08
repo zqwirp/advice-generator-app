@@ -1,3 +1,80 @@
 @import "fonts";
 @import "globals";
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10vh;
+
+  height: 100%;
+}
+
+.box {
+  position: relative;
+
+  width: 90%;
+  min-width: 300px;
+  max-width: 400px;
+
+  padding: 33px 20px 60px;
+
+  background-color: $color-blue-200;
+  border-radius: 8px;
+
+  font-size: 22px;
+  text-align: center;
+
+  &__title {
+    font-size: 0.5em;
+    letter-spacing: 0.3em;
+    color: $color-green-200;
+  }
+
+  &__body {
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  &__dvider {
+    img {
+      margin: 0 auto;
+    }
+
+    img.desktop {
+      display: none;
+    }
+  }
+
+  button {
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%)
+  }
+}
+
+footer {
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (min-width: 400px) {
+  .box {
+    &__dvider {
+      img.mobile {
+        display: none;
+      }
+      img.desktop {
+        display: block;
+      }
+    }
+  }
+}
