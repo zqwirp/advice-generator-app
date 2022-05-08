@@ -49,9 +49,36 @@
 
   button {
     position: absolute;
-    bottom: -15px;
+    bottom: -28px;
     left: 50%;
-    transform: translateX(-50%)
+    transform: translateX(-50%);
+
+    padding: 18px;
+
+    background-color: $color-green-200;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 3px 0 $color-green-200;
+
+    transition: all 0.1s;
+
+    img {
+      transition: all 0.1s;
+    }
+
+    cursor: pointer;
+    &:hover {
+      background-color: lighten($color-green-200, 10);
+      box-shadow: 0 0 7px 1px lighten($color-green-200, 5);
+    }
+    &:active {
+      background-color: darken($color-green-200, 10);
+      box-shadow: 0 0 7px 1px darken($color-green-200, 5), 0 0 10px 0 darkcyan inset;
+
+      img {
+        transform: scale(0.95);
+      }
+    }
   }
 }
 

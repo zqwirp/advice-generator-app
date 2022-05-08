@@ -79,9 +79,30 @@ body {
 }
 .box button {
   position: absolute;
-  bottom: -15px;
+  bottom: -28px;
   left: 50%;
   transform: translateX(-50%);
+  padding: 18px;
+  background-color: hsl(150deg, 100%, 66%);
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 3px 0 hsl(150deg, 100%, 66%);
+  transition: all 0.1s;
+  cursor: pointer;
+}
+.box button img {
+  transition: all 0.1s;
+}
+.box button:hover {
+  background-color: #85ffc2;
+  box-shadow: 0 0 7px 1px #6bffb5;
+}
+.box button:active {
+  background-color: #1fff8f;
+  box-shadow: 0 0 7px 1px #38ff9c, 0 0 10px 0 darkcyan inset;
+}
+.box button:active img {
+  transform: scale(0.95);
 }
 
 .attribution {
