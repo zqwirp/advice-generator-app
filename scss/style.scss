@@ -2,106 +2,154 @@
 @import "globals";
 
 .container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10vh;
 
-  height: 100%;
+	height: 100%;
 }
 
 .box {
-  position: relative;
+	position: relative;
 
-  width: 90%;
-  min-width: 300px;
-  max-width: 400px;
+	width: 90%;
+	min-width: 300px;
+	max-width: 400px;
 
-  padding: 33px 20px 60px;
+	padding: 33px 20px 60px;
 
-  background-color: $color-blue-200;
-  border-radius: 8px;
+	background-color: $color-blue-200;
+	border-radius: 8px;
 
-  font-size: 22px;
-  text-align: center;
+	font-size: 22px;
+	text-align: center;
 
-  &__title {
-    font-size: 0.5em;
-    letter-spacing: 0.3em;
-    color: $color-green-200;
-  }
+	&__title {
+		font-size: 0.5em;
+		letter-spacing: 0.3em;
+		color: $color-green-200;
+	}
 
-  &__body {
-    margin-top: 30px;
-    margin-bottom: 20px;
-  }
+	&__body {
+		margin-top: 30px;
+		margin-bottom: 20px;
+	}
 
-  &__dvider {
-    img {
-      margin: 0 auto;
-    }
+	&__dvider {
+		img {
+			margin: 0 auto;
+		}
 
-    img.desktop {
-      display: none;
-    }
-  }
+		img.desktop {
+			display: none;
+		}
+	}
 
-  button {
-    position: absolute;
-    bottom: -28px;
-    left: 50%;
-    transform: translateX(-50%);
+	button {
+		position: absolute;
+		bottom: -28px;
+		left: 50%;
+		transform: translateX(-50%);
 
-    padding: 18px;
+		padding: 30px;
 
-    background-color: $color-green-200;
-    border: none;
-    border-radius: 50%;
-    box-shadow: 0 0 3px 0 $color-green-200;
+		background-color: $color-green-200;
+		background-image: url("assets/icon-dice.svg");
+		background-repeat: no-repeat;
+		background-position: center center;
+		background-size: 45%;
+		border: none;
+		border-radius: 50%;
+		box-shadow: 0 0 3px 0 $color-green-200;
 
-    transition: all 0.1s;
+		transition: all 0.1s;
 
-    img {
-      transition: all 0.1s;
-    }
+		cursor: pointer;
+		&:hover {
+			background-color: lighten($color-green-200, 10);
+			box-shadow: 0 0 7px 1px lighten($color-green-200, 5);
+		}
+		&:active {
+			background-color: darken($color-green-200, 8);
+			background-size: 40%;
+			box-shadow: 0 0 7px 1px darken($color-green-200, 4),
+				0 0 5px 1px darkcyan inset;
+		}
 
-    cursor: pointer;
-    &:hover {
-      background-color: lighten($color-green-200, 10);
-      box-shadow: 0 0 7px 1px lighten($color-green-200, 5);
-    }
-    &:active {
-      background-color: darken($color-green-200, 10);
-      box-shadow: 0 0 7px 1px darken($color-green-200, 5), 0 0 10px 0 darkcyan inset;
-
-      img {
-        transform: scale(0.95);
-      }
-    }
-  }
+		&:disabled,
+		&:disabled:hover,
+		&:disabled:active {
+			background-color: darken($color-green-200, 50);
+			box-shadow: none;
+			background-image: none;
+			background-size: 45%;
+		}
+	}
 }
 
 footer {
 }
 
 .attribution {
-  font-size: 11px;
-  text-align: center;
+	font-size: 11px;
+	text-align: center;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+	color: hsl(228, 45%, 44%);
 }
 
 @media screen and (min-width: 400px) {
-  .box {
-    &__dvider {
-      img.mobile {
-        display: none;
-      }
-      img.desktop {
-        display: block;
-      }
-    }
-  }
+	.box {
+		&__dvider {
+			img.mobile {
+				display: none;
+			}
+			img.desktop {
+				display: block;
+			}
+		}
+	}
 }
+
+.dot-flashing {
+	position: relative;
+	width: 8px;
+	height: 8px;
+	margin: 10px auto;
+	border-radius: 50%;
+	background-color: lighten($color-green-200, 20);
+	// animation: dotFlashing 1s infinite alternate;
+	// animation-delay: 0s;
+
+	&::before,
+	&::after {
+		content: "";
+		position: absolute;
+		display: block;
+		width: 8px;
+		height: 8px;
+		margin: 0 auto;
+		border-radius: 50%;
+		background-color: lighten($color-green-200, 20);
+	}
+
+	&::before {
+		left: -16px;
+	}
+
+	&::after {
+		right: -16px;
+	}
+}
+
+// @keyframes dotFlashing {
+//   0% {
+//     background-color: #9880ff;
+//   }
+//   50%,
+//   100% {
+//     background-color: #ebe6ff;
+//   }
+// }
