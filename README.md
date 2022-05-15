@@ -41,7 +41,7 @@ Users should be able to:
 
 I learned to make animation.
 
-```css
+```scss
 .dot-flashing {
 	display: none;
 
