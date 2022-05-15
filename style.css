@@ -106,8 +106,8 @@ body {
 .box button:disabled, .box button:disabled:hover, .box button:disabled:active {
   background-color: #005229;
   box-shadow: none;
-  background-image: none;
-  background-size: 45%;
+  background-size: 30%;
+  cursor: revert;
 }
 
 .attribution {
@@ -128,12 +128,14 @@ body {
   }
 }
 .dot-flashing {
+  display: none;
   position: relative;
   width: 8px;
   height: 8px;
   margin: 10px auto;
   border-radius: 50%;
   background-color: #b8ffdb;
+  animation: dot-flashing 0.5s alternate 0.25s infinite;
 }
 .dot-flashing::before, .dot-flashing::after {
   content: "";
@@ -147,9 +149,17 @@ body {
 }
 .dot-flashing::before {
   left: -16px;
+  animation: dot-flashing 0.5s alternate infinite;
 }
 .dot-flashing::after {
   right: -16px;
+  animation: dot-flashing 0.5s alternate 0.5s infinite;
+}
+
+@keyframes dot-flashing {
+  to {
+    background-color: #1fff8f;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
