@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const loader = adviceElement.nextElementSibling;
     loader.style.display = "block";
 
-    const slipId = Math.floor(Math.random() * (100 - 1)) + 1;
+    const slipId = Math.floor(Math.random() * (224 - 1)) + 1;
     const data = await fetch("https://api.adviceslip.com/advice/" + slipId)
       .then(res => res.json())
       .then(res => {
@@ -29,6 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => {
       event.target.disabled = false;
-    }, 5000);
+    }, 7500);
   });
 });
